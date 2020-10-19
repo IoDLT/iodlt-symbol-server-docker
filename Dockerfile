@@ -2,6 +2,7 @@ FROM ubuntu:latest
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG SERVER_VERSION=v0.10.0.3
+ARG SERVER_URL=https://github.com/nemtech/catapult-server.git
 
 ENV TZ=America/New_York
 RUN apt update -y
@@ -11,7 +12,7 @@ RUN apt install python3-pip git cmake ninja-build -y
 WORKDIR /home
 
 RUN pip3 install conan
-RUN git clone https://github.com/nemtech/catapult-server.git --single-branch --branch ${SERVER_VERSION} server
+RUN git clone ${SERVER_URL} --single-branch --branch ${SERVER_VERSION} server
 
 RUN cd server
 RUN mkdir _build

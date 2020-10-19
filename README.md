@@ -10,7 +10,9 @@ symbolServerImage: mydockerioduser/catapult-server:version_number
 
 ## Building
 
-Build as you would any docker image.  If you wish to compile a different version of `catapult-server`, change the `SERVER_VERSION` variable in the Dockerfile. Keep in mind the version should support conan.
+Build as you would any docker image.  If you wish to compile a different release / branch of `catapult-server`, change the `SERVER_VERSION` variable in the Dockerfile. 
+
+Keep in mind the version chosen should support conan. For using a custom git repo, change `SERVER_URL` to your desired repo.
 
 ```sh
 cd iodlt-symbol-server-docker
